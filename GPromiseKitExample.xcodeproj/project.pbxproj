@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B1B5F9C20A9ACBE00D5026F /* GPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1B5F9B20A9ACBE00D5026F /* GPromise.m */; };
+		2B1B5F9F20A9B32A00D5026F /* GPromiseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1B5F9E20A9B32A00D5026F /* GPromiseUtil.m */; };
+		2B1B5FA220AABF2000D5026F /* GPromise+Impl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1B5FA120AABF2000D5026F /* GPromise+Impl.m */; };
+		2B51B26D20A1867400392E3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51B26C20A1867400392E3D /* AppDelegate.m */; };
+		2B51B27020A1867400392E3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51B26F20A1867400392E3D /* ViewController.m */; };
+		2B51B27320A1867400392E3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B51B27120A1867400392E3D /* Main.storyboard */; };
+		2B51B27520A1867400392E3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B51B27420A1867400392E3D /* Assets.xcassets */; };
+		2B51B27820A1867400392E3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B51B27620A1867400392E3D /* LaunchScreen.storyboard */; };
+		2B51B27B20A1867400392E3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51B27A20A1867400392E3D /* main.m */; };
+		2B51B28520A1867400392E3D /* GPromiseKitExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51B28420A1867400392E3D /* GPromiseKitExampleTests.m */; };
+		2B51B29020A1867500392E3D /* GPromiseKitExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B51B28F20A1867500392E3D /* GPromiseKitExampleUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2B51B28120A1867400392E3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B51B26020A1867400392E3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B51B26720A1867400392E3D;
+			remoteInfo = GPromiseKitExample;
+		};
+		2B51B28C20A1867500392E3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B51B26020A1867400392E3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B51B26720A1867400392E3D;
+			remoteInfo = GPromiseKitExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2B1B5F9A20A9ACBE00D5026F /* GPromise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPromise.h; sourceTree = "<group>"; };
+		2B1B5F9B20A9ACBE00D5026F /* GPromise.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPromise.m; sourceTree = "<group>"; };
+		2B1B5F9D20A9B32A00D5026F /* GPromiseUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPromiseUtil.h; sourceTree = "<group>"; };
+		2B1B5F9E20A9B32A00D5026F /* GPromiseUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPromiseUtil.m; sourceTree = "<group>"; };
+		2B1B5FA020AABF2000D5026F /* GPromise+Impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GPromise+Impl.h"; sourceTree = "<group>"; };
+		2B1B5FA120AABF2000D5026F /* GPromise+Impl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GPromise+Impl.m"; sourceTree = "<group>"; };
+		2B1B5FA320AAC77500D5026F /* GPromiseInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPromiseInternal.h; sourceTree = "<group>"; };
+		2B1B5FA420AAD8E700D5026F /* GPromiseKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPromiseKit.h; sourceTree = "<group>"; };
+		2B51B26820A1867400392E3D /* GPromiseKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPromiseKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B51B26B20A1867400392E3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2B51B26C20A1867400392E3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2B51B26E20A1867400392E3D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2B51B26F20A1867400392E3D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2B51B27220A1867400392E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2B51B27420A1867400392E3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B51B27720A1867400392E3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2B51B27920A1867400392E3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B51B27A20A1867400392E3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2B51B28020A1867400392E3D /* GPromiseKitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPromiseKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B51B28420A1867400392E3D /* GPromiseKitExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPromiseKitExampleTests.m; sourceTree = "<group>"; };
+		2B51B28620A1867400392E3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B51B28B20A1867500392E3D /* GPromiseKitExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPromiseKitExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B51B28F20A1867500392E3D /* GPromiseKitExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPromiseKitExampleUITests.m; sourceTree = "<group>"; };
+		2B51B29120A1867500392E3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B51B26520A1867400392E3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B51B27D20A1867400392E3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B51B28820A1867500392E3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B51B25F20A1867400392E3D = {
+			isa = PBXGroup;
+			children = (
+				2B51B29D20A186AB00392E3D /* GPromiseKit */,
+				2B51B26A20A1867400392E3D /* GPromiseKitExample */,
+				2B51B28320A1867400392E3D /* GPromiseKitExampleTests */,
+				2B51B28E20A1867500392E3D /* GPromiseKitExampleUITests */,
+				2B51B26920A1867400392E3D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B51B26920A1867400392E3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B51B26820A1867400392E3D /* GPromiseKitExample.app */,
+				2B51B28020A1867400392E3D /* GPromiseKitExampleTests.xctest */,
+				2B51B28B20A1867500392E3D /* GPromiseKitExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B51B26A20A1867400392E3D /* GPromiseKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				2B51B26B20A1867400392E3D /* AppDelegate.h */,
+				2B51B26C20A1867400392E3D /* AppDelegate.m */,
+				2B51B26E20A1867400392E3D /* ViewController.h */,
+				2B51B26F20A1867400392E3D /* ViewController.m */,
+				2B51B27120A1867400392E3D /* Main.storyboard */,
+				2B51B27420A1867400392E3D /* Assets.xcassets */,
+				2B51B27620A1867400392E3D /* LaunchScreen.storyboard */,
+				2B51B27920A1867400392E3D /* Info.plist */,
+				2B51B27A20A1867400392E3D /* main.m */,
+			);
+			path = GPromiseKitExample;
+			sourceTree = "<group>";
+		};
+		2B51B28320A1867400392E3D /* GPromiseKitExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B51B28420A1867400392E3D /* GPromiseKitExampleTests.m */,
+				2B51B28620A1867400392E3D /* Info.plist */,
+			);
+			path = GPromiseKitExampleTests;
+			sourceTree = "<group>";
+		};
+		2B51B28E20A1867500392E3D /* GPromiseKitExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2B51B28F20A1867500392E3D /* GPromiseKitExampleUITests.m */,
+				2B51B29120A1867500392E3D /* Info.plist */,
+			);
+			path = GPromiseKitExampleUITests;
+			sourceTree = "<group>";
+		};
+		2B51B29D20A186AB00392E3D /* GPromiseKit */ = {
+			isa = PBXGroup;
+			children = (
+				2B1B5FA420AAD8E700D5026F /* GPromiseKit.h */,
+				2B1B5F9A20A9ACBE00D5026F /* GPromise.h */,
+				2B1B5F9B20A9ACBE00D5026F /* GPromise.m */,
+				2B1B5FA020AABF2000D5026F /* GPromise+Impl.h */,
+				2B1B5FA120AABF2000D5026F /* GPromise+Impl.m */,
+				2B1B5F9D20A9B32A00D5026F /* GPromiseUtil.h */,
+				2B1B5F9E20A9B32A00D5026F /* GPromiseUtil.m */,
+				2B1B5FA320AAC77500D5026F /* GPromiseInternal.h */,
+			);
+			path = GPromiseKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B51B26720A1867400392E3D /* GPromiseKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B51B29420A1867500392E3D /* Build configuration list for PBXNativeTarget "GPromiseKitExample" */;
+			buildPhases = (
+				2B51B26420A1867400392E3D /* Sources */,
+				2B51B26520A1867400392E3D /* Frameworks */,
+				2B51B26620A1867400392E3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GPromiseKitExample;
+			productName = GPromiseKitExample;
+			productReference = 2B51B26820A1867400392E3D /* GPromiseKitExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2B51B27F20A1867400392E3D /* GPromiseKitExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B51B29720A1867500392E3D /* Build configuration list for PBXNativeTarget "GPromiseKitExampleTests" */;
+			buildPhases = (
+				2B51B27C20A1867400392E3D /* Sources */,
+				2B51B27D20A1867400392E3D /* Frameworks */,
+				2B51B27E20A1867400392E3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B51B28220A1867400392E3D /* PBXTargetDependency */,
+			);
+			name = GPromiseKitExampleTests;
+			productName = GPromiseKitExampleTests;
+			productReference = 2B51B28020A1867400392E3D /* GPromiseKitExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2B51B28A20A1867500392E3D /* GPromiseKitExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B51B29A20A1867500392E3D /* Build configuration list for PBXNativeTarget "GPromiseKitExampleUITests" */;
+			buildPhases = (
+				2B51B28720A1867500392E3D /* Sources */,
+				2B51B28820A1867500392E3D /* Frameworks */,
+				2B51B28920A1867500392E3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B51B28D20A1867500392E3D /* PBXTargetDependency */,
+			);
+			name = GPromiseKitExampleUITests;
+			productName = GPromiseKitExampleUITests;
+			productReference = 2B51B28B20A1867500392E3D /* GPromiseKitExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B51B26020A1867400392E3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = GIKI;
+				TargetAttributes = {
+					2B51B26720A1867400392E3D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					2B51B27F20A1867400392E3D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2B51B26720A1867400392E3D;
+					};
+					2B51B28A20A1867500392E3D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2B51B26720A1867400392E3D;
+					};
+				};
+			};
+			buildConfigurationList = 2B51B26320A1867400392E3D /* Build configuration list for PBXProject "GPromiseKitExample" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2B51B25F20A1867400392E3D;
+			productRefGroup = 2B51B26920A1867400392E3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B51B26720A1867400392E3D /* GPromiseKitExample */,
+				2B51B27F20A1867400392E3D /* GPromiseKitExampleTests */,
+				2B51B28A20A1867500392E3D /* GPromiseKitExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2B51B26620A1867400392E3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B51B27820A1867400392E3D /* LaunchScreen.storyboard in Resources */,
+				2B51B27520A1867400392E3D /* Assets.xcassets in Resources */,
+				2B51B27320A1867400392E3D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B51B27E20A1867400392E3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B51B28920A1867500392E3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B51B26420A1867400392E3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B51B27020A1867400392E3D /* ViewController.m in Sources */,
+				2B51B27B20A1867400392E3D /* main.m in Sources */,
+				2B1B5F9F20A9B32A00D5026F /* GPromiseUtil.m in Sources */,
+				2B1B5F9C20A9ACBE00D5026F /* GPromise.m in Sources */,
+				2B1B5FA220AABF2000D5026F /* GPromise+Impl.m in Sources */,
+				2B51B26D20A1867400392E3D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B51B27C20A1867400392E3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B51B28520A1867400392E3D /* GPromiseKitExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B51B28720A1867500392E3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B51B29020A1867500392E3D /* GPromiseKitExampleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B51B28220A1867400392E3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B51B26720A1867400392E3D /* GPromiseKitExample */;
+			targetProxy = 2B51B28120A1867400392E3D /* PBXContainerItemProxy */;
+		};
+		2B51B28D20A1867500392E3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B51B26720A1867400392E3D /* GPromiseKitExample */;
+			targetProxy = 2B51B28C20A1867500392E3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B51B27120A1867400392E3D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B51B27220A1867400392E3D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2B51B27620A1867400392E3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B51B27720A1867400392E3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2B51B29220A1867500392E3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2B51B29320A1867500392E3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2B51B29520A1867500392E3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RCF9CM736N;
+				INFOPLIST_FILE = GPromiseKitExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GIKI.GPromiseKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B51B29620A1867500392E3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RCF9CM736N;
+				INFOPLIST_FILE = GPromiseKitExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GIKI.GPromiseKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2B51B29820A1867500392E3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RCF9CM736N;
+				INFOPLIST_FILE = GPromiseKitExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GIKI.GPromiseKitExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPromiseKitExample.app/GPromiseKitExample";
+			};
+			name = Debug;
+		};
+		2B51B29920A1867500392E3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RCF9CM736N;
+				INFOPLIST_FILE = GPromiseKitExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GIKI.GPromiseKitExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPromiseKitExample.app/GPromiseKitExample";
+			};
+			name = Release;
+		};
+		2B51B29B20A1867500392E3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RCF9CM736N;
+				INFOPLIST_FILE = GPromiseKitExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GIKI.GPromiseKitExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GPromiseKitExample;
+			};
+			name = Debug;
+		};
+		2B51B29C20A1867500392E3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RCF9CM736N;
+				INFOPLIST_FILE = GPromiseKitExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GIKI.GPromiseKitExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GPromiseKitExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B51B26320A1867400392E3D /* Build configuration list for PBXProject "GPromiseKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B51B29220A1867500392E3D /* Debug */,
+				2B51B29320A1867500392E3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B51B29420A1867500392E3D /* Build configuration list for PBXNativeTarget "GPromiseKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B51B29520A1867500392E3D /* Debug */,
+				2B51B29620A1867500392E3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B51B29720A1867500392E3D /* Build configuration list for PBXNativeTarget "GPromiseKitExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B51B29820A1867500392E3D /* Debug */,
+				2B51B29920A1867500392E3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B51B29A20A1867500392E3D /* Build configuration list for PBXNativeTarget "GPromiseKitExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B51B29B20A1867500392E3D /* Debug */,
+				2B51B29C20A1867500392E3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B51B26020A1867400392E3D /* Project object */;
+}
