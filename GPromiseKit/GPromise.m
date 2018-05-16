@@ -161,7 +161,7 @@
     }
 }
 
-- (GPromise*)invokeChainsOnQueue:(dispatch_queue_t)queue fulfill:(GPromiseFulfilledBlock)fulfilled reject:(GPromiseRejectedBlock)rejected
+- (GPromise*)invokeChainsOnQueue:(dispatch_queue_t)queue fulfill:(GPromiseFulfillReturnBlock)fulfilled reject:(GPromiseRejectReturnBlock)rejected
 {
     if (queue==nil) queue = dispatchQueuePrivate;
     
@@ -222,7 +222,7 @@
     }
     @synchronized(self) {
         if (_currentState == GPromiseState_Pending) {
-          [self processValue:nil error:error state:GPromiseState_Fulfill];
+          [self processValue:nil error:error state:GPromiseState_Reject];
         }
     }
 }

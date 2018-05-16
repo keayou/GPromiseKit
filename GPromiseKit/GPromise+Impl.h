@@ -43,6 +43,11 @@
 + (GPromise*)async:(GPromiseAsyncBlock)block invokeQueue:(dispatch_queue_t)queue;
 @end
 
+@interface GPromise(inovke)
++ (GPromise*)inovke:(GPromiseInvokeBlock)block;
++ (GPromise*)inovke:(GPromiseInvokeBlock)block invokeQueue:(dispatch_queue_t)queue;
+@end
+
 @interface GPromise(all)
 + (GPromise*)all:(NSArray*)promises;
 + (GPromise*)all:(NSArray*)promises invokeQueue:(dispatch_queue_t)queue;

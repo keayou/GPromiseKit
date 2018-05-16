@@ -100,9 +100,7 @@
     }];
     __weak typeof(self) weakSelf = promise;
     dispatch_after(dispatch_time(0, (int64_t)(interval * NSEC_PER_SEC)), queue, ^{
-        NSError *timedOutError = [NSError errorWithDomain:GPromiseErrorDomain
-                                                     code:1
-                                                 userInfo:nil];
+        NSError *timedOutError = GPromiseErrorCode(2, @"promise--timeout");
         [weakSelf reject:timedOutError];
     });
     return promise;
@@ -135,6 +133,33 @@
         },^(NSError *error) {
             [promise reject:error];
         });
+    });
+    return promise;
+}
+
+@end
+
+@implementation GPromise(inovke)
++ (GPromise*)inovke:(GPromiseInvokeBlock)block
+{
+    return [self inovke:block invokeQueue:GPromiseDefulatQueue];
+}
+
++ (GPromise*)inovke:(GPromiseInvokeBlock)block invokeQueue:(dispatch_queue_t)queue
+{
+    GPromise *promise = [GPromise promise];
+    dispatch_group_async(GPromiseDefulatGroup, queue, ^{
+        id value = block();
+        if (GPromiseClass(value)) {
+            GPromise *promiseT = (GPromise*)value;
+            [promiseT doProcessPromiseOnQueue:queue fulfill:^(id value) {
+                [promise fulfill:value];
+            } reject:^(NSError *error) {
+                [promise reject:error];
+            }];
+        } else {
+            [promise fulfill:value];
+        }
     });
     return promise;
 }
@@ -178,7 +203,6 @@
                         return;
                     }
                 }
-                // If called multiple times, only the first one affects the result.
                 fulfill([promises valueForKey:NSStringFromSelector(@selector(value))]);
             } reject:^(NSError *error) {
                 reject(error);
@@ -215,26 +239,25 @@
         }
         for (GPromise *promise in promisesM) {
             [promise doProcessPromiseOnQueue:queue fulfill:^(id value) {
-                // Wait until all are resolved.
+        
                 for (GPromise *promise in promisesM) {
                     if (promise.isPending) {
                         return;
                     }
                 }
-                // If called multiple times, only the first one affects the result.
-//                fulfill(FBLPromiseCombineValuesAndErrors(promises));
+                fulfill([GPromiseUtil filterPromiseReturnValues:promises]);
             } reject:^(NSError *error) {
-                BOOL atLeastOneIsFulfilled = NO;
+                BOOL fulfilled = NO;
                 for (GPromise *promise in promises) {
                     if ([promise isPending]) {
                         return;
                     }
                     if ([promise isFulfill]) {
-                        atLeastOneIsFulfilled = YES;
+                        fulfilled = YES;
                     }
                 }
-                if (atLeastOneIsFulfilled) {
-//                    fulfill(FBLPromiseCombineValuesAndErrors(promises));
+                if (fulfilled) {
+                    fulfill([GPromiseUtil filterPromiseReturnValues:promises]);
                 } else {
                     reject(error);
                 }

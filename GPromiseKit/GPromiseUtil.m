@@ -7,7 +7,7 @@
 //
 
 #import "GPromiseUtil.h"
-
+#import "GPromiseInternal.h"
 @implementation GPromiseUtil
 
 + (dispatch_group_t)dispatchGroup
@@ -20,5 +20,27 @@
     return dispatchGroupPrivate;
 }
 
++ (NSArray*)filterPromiseReturnValues:(NSArray*)promises
+{
+    NSMutableArray *combinedValuesAndErrors = [[NSMutableArray alloc] init];
+    for (GPromise *promise in promises) {
+        if (promise.isFulfill) {
+            [combinedValuesAndErrors addObject:promise.value ?: [NSNull null]];
+            continue;
+        }
+        if (promise.isReject) {
+            [combinedValuesAndErrors addObject:promise.error];
+            continue;
+        }
+        assert(!promise.isPending);
+    };
+    return combinedValuesAndErrors;
+}
+
++ (NSError*)generateErrorWithDomain:(NSString*)domain code:(NSInteger)code userinfo:(id)userInfo
+{
+    NSError *error = [NSError errorWithDomain:domain?:GPromiseErrorDomain code:code userInfo:userInfo];
+    return error;
+}
 @end
 

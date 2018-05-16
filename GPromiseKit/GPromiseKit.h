@@ -9,6 +9,7 @@
 #ifndef GPromiseKit_h
 #define GPromiseKit_h
 
-#import "GPromise+Impl.h"
 #import "GPromise.h"
+#import "GPromise+Impl.h"
+
 #endif /* GPromiseKit_h */

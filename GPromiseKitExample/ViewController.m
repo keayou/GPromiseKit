@@ -8,9 +8,19 @@
 
 #import "ViewController.h"
 #import "GPromiseKit.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView * tableView;
 @end
+
+static inline void Delay(NSTimeInterval interval, void (^work)(void)) {
+    int64_t const timeToWait = (int64_t)(interval * NSEC_PER_SEC);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, timeToWait),
+                   dispatch_get_main_queue(), ^{
+                       work();
+                   });
+}
+
 
 @implementation ViewController
 
@@ -22,7 +32,6 @@
 - (void)loadTableView
 {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame), self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.navigationController.navigationBar.frame)) style:UITableViewStylePlain];
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.estimatedRowHeight = 0;
@@ -61,6 +70,8 @@
 {
     if (indexPath.row == 0) {
         [self invoke1];
+    } else if (indexPath.row == 1) {
+        [self invoke2];
     }
 }
 
@@ -70,54 +81,78 @@
 }
 
 #pragma mark - private Method
+- (void)invoke2
+{
+    NSUInteger __block count = 0;
+    
+    GPromise *promise = [GPromise resolved:@42];
+    [[[[[[promise then:^id(NSNumber *value) {
+        ++count;
+        return value;
+    }] then:^id(NSNumber *value) {
+        ++count;
+        return value;
+    }] then:^id(NSNumber *value) {
+        ++count;
+        NSLog(@"%ld",count);
+        NSLog(@"%@",value);
+        return value;
+    }] then:^id(id value) {
+        GPromise *promise = [GPromise resolved:GPromiseError(@"有错误啦")];
+        return promise;
+    }] then:^id(id value) {
+        return value;
+    }] catchError:^(NSError *error) {
+        NSLog(@"errro%@",error.userInfo);
+    }];
+    
+ 
+
+}
 
 - (void)invoke1
 {
-    GPromise * pr1 = [[[GPromise async:^(GPromiseFulfillBlock fulfill, GPromiseRejectBlock reject) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            fulfill(@"1成功");
-            NSError *error = [NSError errorWithDomain:GPromiseErrorDomain code:1 userInfo:@{NSLocalizedDescriptionKey : @"error"}];
-            reject(error);
+    GPromise *promise1 =
+    [GPromise async:^(GPromiseFulfillBlock fulfill, GPromiseRejectBlock __unused _) {
+        NSLog(@"1");
+        Delay(0.1, ^{
+             NSLog(@"1.1");
+            fulfill(@42);
         });
-    }] then:^id(id value) {
-        NSString * s = [NSString stringWithFormat:@"%@+2",value];
-        GPromise * pr = [GPromise promise];
-        [pr fulfill:s];
-//        [pr reject:[NSError errorWithDomain:GPromiseErrorDomain code:1 userInfo:@{NSLocalizedDescriptionKey : @"error"}]];
-        return pr;
-    }] catchError:^(NSError *error) {
-        NSLog(@"%@",error);
     }];
-    NSError *error1 = [NSError errorWithDomain:GPromiseErrorDomain code:1 userInfo:@{NSLocalizedDescriptionKey : @"error"}];
-    GPromise *pr3 = [GPromise promise];
-    [pr3 fulfill:@"string"];
-    [pr3 then:^id(id value) {
-        NSString * s = [NSString stringWithFormat:@"%@+2",value];
-        GPromise * pr = [GPromise promise];
-        [pr fulfill:s];
-        //        [pr reject:[NSError errorWithDomain:GPromiseErrorDomain code:1 userInfo:@{NSLocalizedDescriptionKey : @"error"}]];
-        return pr;
+    GPromise *promise2 =
+    [GPromise async:^(GPromiseFulfillBlock fulfill, GPromiseRejectBlock __unused _) {
+        NSLog(@"2");
+        Delay(1, ^{
+            NSLog(@"2.1");
+            fulfill(@"hello world");
+        });
     }];
-    [pr3 catchError:^(NSError *error) {
-        NSLog(@"%@",error);
+    GPromise *promise3 =
+    [GPromise async:^(GPromiseFulfillBlock fulfill, GPromiseRejectBlock __unused _) {
+         NSLog(@"3");
+        Delay(2, ^{
+             NSLog(@"3.1");
+            fulfill(@[ @42 ]);
+        });
+    }];
+    GPromise *promise4 =
+    [GPromise async:^(GPromiseFulfillBlock fulfill, GPromiseRejectBlock reject) {
+        NSLog(@"4");
+        Delay(0.01, ^{
+                 NSLog(@"4.1");
+            fulfill(@"23");
+//           reject([NSError errorWithDomain:GPromiseErrorDomain code:42 userInfo:nil]);
+        });
     }];
     
-//    GPromise * pr2 = [GPromise async:^(GPromiseFulfillBlock fulfill, GPromiseRejectBlock reject) {
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-////        fulfill(@"hahah");
-//            NSError *error = [NSError errorWithDomain:GPromiseErrorDomain code:1 userInfo:@{NSLocalizedDescriptionKey : @"error"}];
-//            reject(error);
-//        });
-//        
-//    }];
-//    
-//    GPromise * all = [GPromise all:@[pr1,pr2]];
-//    [[all then:^id(id value) {
-//        NSLog(@"%@",value);
-//        return value;
-//    }] catchError:^(NSError *error) {
-//        NSLog(@"%@",error);
-//    }];
+    GPromise *combinedPromise =
+    [[[GPromise all:@[ promise1, promise2, promise3, promise4 ]] then:^id(NSArray *value) {
+         NSLog(@"value");
+        return value;
+    }] catchError:^(NSError *error) {
+        NSLog(@"error");
+    }];
     
     
 }
