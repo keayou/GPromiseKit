@@ -1,6 +1,6 @@
 //
 //  GPromise+Impl.h
-//  GPromiseKitExample
+//  GPromiseKit
 //
 //  Created by GIKI on 2018/5/15.
 //  Copyright © 2018年 GIKI. All rights reserved.
@@ -38,14 +38,14 @@
 - (GPromise *)timeout:(NSTimeInterval)interval invokeQueue:(dispatch_queue_t)queue;
 @end
 
-@interface GPromise(async)
-+ (GPromise*)async:(GPromiseAsyncBlock)block;
-+ (GPromise*)async:(GPromiseAsyncBlock)block invokeQueue:(dispatch_queue_t)queue;
-@end
-
 @interface GPromise(inovke)
 + (GPromise*)inovke:(GPromiseInvokeBlock)block;
 + (GPromise*)inovke:(GPromiseInvokeBlock)block invokeQueue:(dispatch_queue_t)queue;
+@end
+
+@interface GPromise(async)
++ (GPromise*)async:(GPromiseAsyncBlock)block;
++ (GPromise*)async:(GPromiseAsyncBlock)block invokeQueue:(dispatch_queue_t)queue;
 @end
 
 @interface GPromise(all)

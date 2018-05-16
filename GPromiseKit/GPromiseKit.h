@@ -1,6 +1,6 @@
 //
 //  GPromiseKit.h
-//  GPromiseKitExample
+//  GPromiseKit
 //
 //  Created by GIKI on 2018/5/15.
 //  Copyright © 2018年 GIKI. All rights reserved.
